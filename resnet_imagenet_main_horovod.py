@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from absl import app
+from absl import app as absl_app
 from absl import flags
 from absl import logging
 import tensorflow as tf
@@ -31,18 +31,16 @@ from official.utils.misc import model_helpers
 from official.vision.image_classification import common
 from official.vision.image_classification import imagenet_preprocessing
 from official.vision.image_classification import resnet_model
-from official.benchmark.models import trivial_model
+from official.vision.image_classification import trivial_model
 import horovod.tensorflow.keras as hvd
 
-# Horovod: initialize Horovod.
 hvd.init()
-
-# Horovod: pin GPU to be used to process local rank (one GPU per process)
 gpus = tf.config.experimental.list_physical_devices('GPU')
 for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 if gpus:
     tf.config.experimental.set_visible_devices(gpus[hvd.local_rank()], 'GPU')
+
 
 LR_SCHEDULE = [    # (multiplier, epoch to start) tuples
     (1.0, 5), (0.1, 30), (0.01, 60), (0.001, 80)
@@ -188,7 +186,8 @@ def run(flags_obj):
         compute_lr_on_cpu=True)
 
   with strategy_scope:
-    optimizer = common.get_optimizer(learning_rate=0.1 * hvd.size())
+    optimizer = common.get_optimizer(lr_schedule)
+    optimizer = hvd.DistributedOptimizer(optimizer)
     if dtype == 'float16':
       # TODO(reedwm): Remove manually wrapping optimizer once mixed precision
       # can be enabled with a single line of code.
@@ -196,14 +195,6 @@ def run(flags_obj):
           optimizer, loss_scale=flags_core.get_loss_scale(flags_obj,
                                                           default_for_fp16=128))
 
-    if flags_obj.fp16_implementation == "graph_rewrite":
-      # Note: when flags_obj.fp16_implementation == "graph_rewrite",
-      # dtype as determined by flags_core.get_tf_dtype(flags_obj) would be 'float32'
-      # which will ensure tf.keras.mixed_precision and tf.train.experimental.enable_mixed_precision_graph_rewrite
-      # do not double up.
-      optimizer = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer)
-    optimizer = hvd.DistributedOptimizer(optimizer)
-    # TODO(hongkuny): Remove trivial model usage and move it to benchmark.
     if flags_obj.use_trivial_model:
       model = trivial_model.trivial_model(
           imagenet_preprocessing.NUM_CLASSES, dtype)
@@ -261,30 +252,12 @@ def run(flags_obj):
     # when not using distribition strategy.
     no_dist_strat_device = tf.device('/device:GPU:0')
     no_dist_strat_device.__enter__()
-
-  callbacks = [
-      # Horovod: broadcast initial variable states from rank 0 to all other processes.
-      # This is necessary to ensure consistent initialization of all workers when
-      # training is started with random weights or restored from a checkpoint.
-      hvd.callbacks.BroadcastGlobalVariablesCallback(0),
-
-      # Horovod: average metrics among workers at the end of every epoch.
-      #
-      # Note: This callback must be in the list before the ReduceLROnPlateau,
-      # TensorBoard or other metrics-based callbacks.
-      hvd.callbacks.MetricAverageCallback(),
-
-      # Horovod: using `lr = 1.0 * hvd.size()` from the very beginning leads to worse final
-      # accuracy. Scale the learning rate `lr = 1.0` ---> `lr = 1.0 * hvd.size()` during
-      # the first three epochs. See https://arxiv.org/abs/1706.02677 for details.
-      hvd.callbacks.LearningRateWarmupCallback(warmup_epochs=3, verbose=1),
-  ]
+  callbacks =[hvd.callbacks.BroadcastGlobalVariablesCallback(0),
+             hvd.callbacks.MetricAverageCallback(),
+             hvd.callbacks.LearningRateWarmupCallback(warmup_epochs=3, verbose=1)]
   if hvd.rank() == 0:
       callbacks.append(tf.keras.callbacks.ModelCheckpoint('./checkpoint-{epoch}.h5'))
-
-      # Horovod: write logs on worker 0.
   verbose = 1 if hvd.rank() == 0 else 0
-
   history = model.fit(train_input_dataset,
                       epochs=train_epochs,
                       steps_per_epoch=train_steps,
@@ -323,4 +296,4 @@ def main(_):
 if __name__ == '__main__':
   logging.set_verbosity(logging.INFO)
   define_imagenet_keras_flags()
-  app.run(main)
+  absl_app.run(main)
