@@ -1,0 +1,217 @@
+/root/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+2019-09-08 23:11:01.291368: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2019-09-08 23:11:01.412273: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: Tesla M40 24GB major: 5 minor: 2 memoryClockRate(GHz): 1.112
+pciBusID: 0000:09:00.0
+2019-09-08 23:11:01.412582: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2019-09-08 23:11:01.414099: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2019-09-08 23:11:01.415433: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2019-09-08 23:11:01.415763: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2019-09-08 23:11:01.417574: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2019-09-08 23:11:01.418879: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2019-09-08 23:11:01.423012: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2019-09-08 23:11:01.428468: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2019-09-08 23:11:01.428900: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-09-08 23:11:01.437944: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2399930000 Hz
+2019-09-08 23:11:01.439280: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5577d8512610 executing computations on platform Host. Devices:
+2019-09-08 23:11:01.439308: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2019-09-08 23:11:02.169299: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5577d8575510 executing computations on platform CUDA. Devices:
+2019-09-08 23:11:02.169346: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla M40 24GB, Compute Capability 5.2
+2019-09-08 23:11:02.171873: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: Tesla M40 24GB major: 5 minor: 2 memoryClockRate(GHz): 1.112
+pciBusID: 0000:09:00.0
+2019-09-08 23:11:02.171943: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2019-09-08 23:11:02.171972: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2019-09-08 23:11:02.172006: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2019-09-08 23:11:02.172040: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2019-09-08 23:11:02.172078: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2019-09-08 23:11:02.172108: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2019-09-08 23:11:02.172143: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2019-09-08 23:11:02.176658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2019-09-08 23:11:02.176712: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2019-09-08 23:11:02.179525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-08 23:11:02.179548: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2019-09-08 23:11:02.179560: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2019-09-08 23:11:02.185078: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 23151 MB memory) -> physical GPU (device: 0, name: Tesla M40 24GB, pci bus id: 0000:09:00.0, compute capability: 5.2)
+INFO:tensorflow:Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa62d1a2c50>>
+I0908 23:11:02.188395 140354273740608 parameter_server_strategy.py:250] Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa62d1a2c50>>
+WARNING:tensorflow:From /root/anaconda3/lib/python3.6/site-packages/tensorflow_core/python/ops/image_ops_impl.py:2487: sample_distorted_bounding_box (from tensorflow.python.ops.image_ops_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+`seed2` arg is deprecated.Use sample_distorted_bounding_box_v2 instead.
+W0908 23:11:03.040461 140354273740608 deprecation.py:323] From /root/anaconda3/lib/python3.6/site-packages/tensorflow_core/python/ops/image_ops_impl.py:2487: sample_distorted_bounding_box (from tensorflow.python.ops.image_ops_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+`seed2` arg is deprecated.Use sample_distorted_bounding_box_v2 instead.
+WARNING:tensorflow:From /root/anaconda3/lib/python3.6/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+W0908 23:11:03.750155 140354273740608 deprecation.py:506] From /root/anaconda3/lib/python3.6/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+WARNING:tensorflow:From /root/anaconda3/lib/python3.6/site-packages/tensorflow_core/python/keras/initializers.py:143: calling RandomNormal.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W0908 23:11:07.339261 140354273740608 deprecation.py:506] From /root/anaconda3/lib/python3.6/site-packages/tensorflow_core/python/keras/initializers.py:143: calling RandomNormal.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+INFO:tensorflow:Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, environment = None, rpc_layer = 'grpc'
+I0908 23:11:07.385982 140354273740608 distribute_coordinator.py:776] Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, environment = None, rpc_layer = 'grpc'
+WARNING:tensorflow:`eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+W0908 23:11:07.386230 140354273740608 distribute_coordinator.py:825] `eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+WARNING:tensorflow:`eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+W0908 23:11:07.386336 140354273740608 distribute_coordinator.py:829] `eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+INFO:tensorflow:Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa55c270780>>
+I0908 23:11:07.387021 140354273740608 parameter_server_strategy.py:250] Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa55c270780>>
+INFO:tensorflow:Starting standard TensorFlow server, target = 'grpc://9.73.136.185:1111', session_config= allow_soft_placement: true
+
+I0908 23:11:07.387281 140354273740608 distribute_coordinator.py:438] Starting standard TensorFlow server, target = 'grpc://9.73.136.185:1111', session_config= allow_soft_placement: true
+
+2019-09-08 23:11:07.390270: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: Tesla M40 24GB major: 5 minor: 2 memoryClockRate(GHz): 1.112
+pciBusID: 0000:09:00.0
+2019-09-08 23:11:07.390353: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2019-09-08 23:11:07.390382: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2019-09-08 23:11:07.390417: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2019-09-08 23:11:07.390447: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2019-09-08 23:11:07.390474: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2019-09-08 23:11:07.390500: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2019-09-08 23:11:07.390527: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2019-09-08 23:11:07.394825: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2019-09-08 23:11:07.394868: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-08 23:11:07.394889: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2019-09-08 23:11:07.394899: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2019-09-08 23:11:07.400269: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:worker/replica:0/task:3/device:GPU:0 with 23151 MB memory) -> physical GPU (device: 0, name: Tesla M40 24GB, pci bus id: 0000:09:00.0, compute capability: 5.2)
+2019-09-08 23:11:07.402107: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:258] Initialize GrpcChannelCache for job ps -> {0 -> 9.73.165.158:1111}
+2019-09-08 23:11:07.402136: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:258] Initialize GrpcChannelCache for job worker -> {0 -> 9.73.165.158:1112, 1 -> 9.73.165.158:1113, 2 -> 9.73.165.158:1114, 3 -> localhost:1111, 4 -> 9.73.136.185:1112, 5 -> 9.73.136.185:1113, 6 -> 9.73.136.185:1114, 7 -> 9.73.169.29:1111, 8 -> 9.73.169.29:1112, 9 -> 9.73.169.29:1113, 10 -> 9.73.169.29:1114, 11 -> 9.73.165.16:1111, 12 -> 9.73.165.16:1112, 13 -> 9.73.165.16:1113, 14 -> 9.73.165.16:1114}
+2019-09-08 23:11:07.404706: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:365] Started server with target: grpc://localhost:1111
+2019-09-08 23:11:07.404736: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:369] Server already started (target: grpc://localhost:1111)
+INFO:tensorflow:Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa55c270400>>
+I0908 23:11:07.405308 140354273740608 parameter_server_strategy.py:250] Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa55c270400>>
+INFO:tensorflow:Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, environment = None, rpc_layer = 'grpc'
+I0908 23:11:08.081233 140354273740608 distribute_coordinator.py:776] Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, environment = None, rpc_layer = 'grpc'
+WARNING:tensorflow:`eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+W0908 23:11:08.081491 140354273740608 distribute_coordinator.py:825] `eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+WARNING:tensorflow:`eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+W0908 23:11:08.081592 140354273740608 distribute_coordinator.py:829] `eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+INFO:tensorflow:Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa5483c8cf8>>
+I0908 23:11:08.082227 140354273740608 parameter_server_strategy.py:250] Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa5483c8cf8>>
+INFO:tensorflow:Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa5483c8400>>
+I0908 23:11:08.082902 140354273740608 parameter_server_strategy.py:250] Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa5483c8400>>
+WARNING:tensorflow:ModelCheckpoint callback is not provided. Workers will need to restart training if any fails.
+W0908 23:11:08.083238 140354273740608 distributed_training_utils.py:1163] ModelCheckpoint callback is not provided. Workers will need to restart training if any fails.
+2019-09-08 23:11:09.473694: W tensorflow/core/grappler/utils/graph_view.cc:830] No registered 'MultiDeviceIteratorFromStringHandle' OpKernel for GPU devices compatible with node {{node MultiDeviceIteratorFromStringHandle}}
+	.  Registered:  device='CPU'
+
+2019-09-08 23:11:09.474068: W tensorflow/core/grappler/utils/graph_view.cc:830] No registered 'MultiDeviceIteratorGetNextFromShard' OpKernel for GPU devices compatible with node {{node MultiDeviceIteratorGetNextFromShard}}
+	.  Registered:  device='CPU'
+
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.022209 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.023394 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.024328 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.025280 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.026217 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.027132 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.028050 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.028984 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.029909 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+I0908 23:11:14.030822 140354273740608 cross_device_ops.py:427] Reduce to /device:CPU:0 then broadcast to ('/job:ps/replica:0/task:0/device:CPU:0',).
+2019-09-08 23:11:18.312199: W tensorflow/core/grappler/utils/graph_view.cc:830] No registered 'MultiDeviceIteratorFromStringHandle' OpKernel for GPU devices compatible with node {{node MultiDeviceIteratorFromStringHandle}}
+	.  Registered:  device='CPU'
+
+2019-09-08 23:11:18.312525: W tensorflow/core/grappler/utils/graph_view.cc:830] No registered 'MultiDeviceIteratorGetNextFromShard' OpKernel for GPU devices compatible with node {{node MultiDeviceIteratorGetNextFromShard}}
+	.  Registered:  device='CPU'
+
+2019-09-08 23:11:24.076880: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2019-09-08 23:11:26.155008: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+INFO:tensorflow:BenchmarkMetric: {'global step':100, 'time_taken': 95.299510,'examples_per_second': 33.578347}
+I0908 23:12:55.318884 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':100, 'time_taken': 95.299510,'examples_per_second': 33.578347}
+INFO:tensorflow:BenchmarkMetric: {'global step':200, 'time_taken': 97.331687,'examples_per_second': 32.877268}
+I0908 23:14:32.650519 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':200, 'time_taken': 97.331687,'examples_per_second': 32.877268}
+INFO:tensorflow:BenchmarkMetric: {'global step':300, 'time_taken': 95.575667,'examples_per_second': 33.481325}
+I0908 23:16:08.226186 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':300, 'time_taken': 95.575667,'examples_per_second': 33.481325}
+INFO:tensorflow:BenchmarkMetric: {'global step':400, 'time_taken': 93.536314,'examples_per_second': 34.211312}
+I0908 23:17:41.762501 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':400, 'time_taken': 93.536314,'examples_per_second': 34.211312}
+INFO:tensorflow:BenchmarkMetric: {'global step':500, 'time_taken': 95.908941,'examples_per_second': 33.364981}
+I0908 23:19:17.671453 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':500, 'time_taken': 95.908941,'examples_per_second': 33.364981}
+INFO:tensorflow:BenchmarkMetric: {'global step':600, 'time_taken': 94.032193,'examples_per_second': 34.030898}
+I0908 23:20:51.703639 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':600, 'time_taken': 94.032193,'examples_per_second': 34.030898}
+INFO:tensorflow:BenchmarkMetric: {'global step':700, 'time_taken': 96.765433,'examples_per_second': 33.069660}
+I0908 23:22:28.469078 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':700, 'time_taken': 96.765433,'examples_per_second': 33.069660}
+INFO:tensorflow:BenchmarkMetric: {'global step':800, 'time_taken': 93.194557,'examples_per_second': 34.336769}
+I0908 23:24:01.663632 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':800, 'time_taken': 93.194557,'examples_per_second': 34.336769}
+INFO:tensorflow:BenchmarkMetric: {'global step':900, 'time_taken': 97.888142,'examples_per_second': 32.690374}
+I0908 23:25:39.551771 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':900, 'time_taken': 97.888142,'examples_per_second': 32.690374}
+INFO:tensorflow:BenchmarkMetric: {'global step':1000, 'time_taken': 93.574942,'examples_per_second': 34.197189}
+I0908 23:27:13.126713 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1000, 'time_taken': 93.574942,'examples_per_second': 34.197189}
+INFO:tensorflow:BenchmarkMetric: {'global step':1100, 'time_taken': 91.309480,'examples_per_second': 35.045649}
+I0908 23:28:44.436210 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1100, 'time_taken': 91.309480,'examples_per_second': 35.045649}
+INFO:tensorflow:BenchmarkMetric: {'global step':1200, 'time_taken': 95.453210,'examples_per_second': 33.524279}
+I0908 23:30:19.889418 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1200, 'time_taken': 95.453210,'examples_per_second': 33.524279}
+INFO:tensorflow:BenchmarkMetric: {'global step':1300, 'time_taken': 95.670521,'examples_per_second': 33.448130}
+I0908 23:31:55.559936 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1300, 'time_taken': 95.670521,'examples_per_second': 33.448130}
+INFO:tensorflow:BenchmarkMetric: {'global step':1400, 'time_taken': 93.629297,'examples_per_second': 34.177337}
+I0908 23:33:29.189215 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1400, 'time_taken': 93.629297,'examples_per_second': 34.177337}
+INFO:tensorflow:BenchmarkMetric: {'global step':1500, 'time_taken': 93.465464,'examples_per_second': 34.237245}
+I0908 23:35:02.654687 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1500, 'time_taken': 93.465464,'examples_per_second': 34.237245}
+INFO:tensorflow:BenchmarkMetric: {'global step':1600, 'time_taken': 93.929633,'examples_per_second': 34.068056}
+I0908 23:36:36.584319 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1600, 'time_taken': 93.929633,'examples_per_second': 34.068056}
+INFO:tensorflow:BenchmarkMetric: {'global step':1700, 'time_taken': 94.235874,'examples_per_second': 33.957344}
+I0908 23:38:10.820185 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1700, 'time_taken': 94.235874,'examples_per_second': 33.957344}
+INFO:tensorflow:BenchmarkMetric: {'global step':1800, 'time_taken': 93.037359,'examples_per_second': 34.394786}
+I0908 23:39:43.857560 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1800, 'time_taken': 93.037359,'examples_per_second': 34.394786}
+INFO:tensorflow:BenchmarkMetric: {'global step':1900, 'time_taken': 93.547471,'examples_per_second': 34.207232}
+I0908 23:41:17.405023 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':1900, 'time_taken': 93.547471,'examples_per_second': 34.207232}
+INFO:tensorflow:BenchmarkMetric: {'global step':2000, 'time_taken': 87.679195,'examples_per_second': 36.496685}
+I0908 23:42:45.084219 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':2000, 'time_taken': 87.679195,'examples_per_second': 36.496685}
+INFO:tensorflow:BenchmarkMetric: {'global step':2100, 'time_taken': 94.087411,'examples_per_second': 34.010926}
+I0908 23:44:19.171689 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':2100, 'time_taken': 94.087411,'examples_per_second': 34.010926}
+INFO:tensorflow:BenchmarkMetric: {'global step':2200, 'time_taken': 93.406211,'examples_per_second': 34.258964}
+I0908 23:45:52.577842 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':2200, 'time_taken': 93.406211,'examples_per_second': 34.258964}
+INFO:tensorflow:BenchmarkMetric: {'global step':2300, 'time_taken': 91.045013,'examples_per_second': 35.147450}
+I0908 23:47:23.622844 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':2300, 'time_taken': 91.045013,'examples_per_second': 35.147450}
+INFO:tensorflow:BenchmarkMetric: {'global step':2400, 'time_taken': 94.841172,'examples_per_second': 33.740621}
+I0908 23:48:58.464026 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':2400, 'time_taken': 94.841172,'examples_per_second': 33.740621}
+INFO:tensorflow:BenchmarkMetric: {'global step':2500, 'time_taken': 90.204883,'examples_per_second': 35.474798}
+I0908 23:50:28.668917 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':2500, 'time_taken': 90.204883,'examples_per_second': 35.474798}
+INFO:tensorflow:BenchmarkMetric: {'global step':2600, 'time_taken': 92.200420,'examples_per_second': 34.707000}
+I0908 23:52:00.869346 140354273740608 keras_utils.py:85] BenchmarkMetric: {'global step':2600, 'time_taken': 92.200420,'examples_per_second': 34.707000}
+WARNING:tensorflow:Your dataset iterator ran out of data; interrupting training. Make sure that your iterator can generate at least `validation_steps * epochs` batches (in this case, 1562 batches). You may need touse the repeat() function when building your dataset.
+W0909 00:06:59.338871 140354273740608 training_arrays.py:330] Your dataset iterator ran out of data; interrupting training. Make sure that your iterator can generate at least `validation_steps * epochs` batches (in this case, 1562 batches). You may need touse the repeat() function when building your dataset.
+INFO:tensorflow:BenchmarkMetric: {'epoch':0, 'time_taken': 3339.322646}
+I0909 00:06:59.341848 140354273740608 keras_utils.py:93] BenchmarkMetric: {'epoch':0, 'time_taken': 3339.322646}
+INFO:tensorflow:Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, environment = None, rpc_layer = 'grpc'
+I0909 00:06:59.343564 140354273740608 distribute_coordinator.py:776] Running Distribute Coordinator with mode = 'independent_worker', cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, environment = None, rpc_layer = 'grpc'
+WARNING:tensorflow:`eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+W0909 00:06:59.343709 140354273740608 distribute_coordinator.py:825] `eval_fn` is not passed in. The `worker_fn` will be used if an "evaluator" task exists in the cluster.
+WARNING:tensorflow:`eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+W0909 00:06:59.343780 140354273740608 distribute_coordinator.py:829] `eval_strategy` is not passed in. No distribution strategy will be used for evaluation.
+INFO:tensorflow:Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa42431e588>>
+I0909 00:06:59.344562 140354273740608 parameter_server_strategy.py:250] Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa42431e588>>
+INFO:tensorflow:Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa40c7b2400>>
+I0909 00:06:59.345251 140354273740608 parameter_server_strategy.py:250] Multi-worker ParameterServerStrategy with cluster_spec = {'ps': ['9.73.165.158:1111'], 'worker': ['9.73.165.158:1112', '9.73.165.158:1113', '9.73.165.158:1114', '9.73.136.185:1111', '9.73.136.185:1112', '9.73.136.185:1113', '9.73.136.185:1114', '9.73.169.29:1111', '9.73.169.29:1112', '9.73.169.29:1113', '9.73.169.29:1114', '9.73.165.16:1111', '9.73.165.16:1112', '9.73.165.16:1113', '9.73.165.16:1114']}, task_type = 'worker', task_id = 3, num_ps_replicas = 1, is_chief = False, device_map = ReplicaDeviceMap(['/job:worker/replica:0/task:3/device:GPU:0']), variable_device = <bound method _ReplicaDeviceChooser.device_function of <tensorflow.python.training.device_setter._ReplicaDeviceChooser object at 0x7fa40c7b2400>>
+WARNING:tensorflow:ModelCheckpoint callback is not provided. Workers will need to restart training if any fails.
+W0909 00:06:59.345563 140354273740608 distributed_training_utils.py:1163] ModelCheckpoint callback is not provided. Workers will need to restart training if any fails.
+2019-09-09 00:07:00.342966: W tensorflow/core/grappler/utils/graph_view.cc:830] No registered 'MultiDeviceIteratorFromStringHandle' OpKernel for GPU devices compatible with node {{node MultiDeviceIteratorFromStringHandle}}
+	.  Registered:  device='CPU'
+
+2019-09-09 00:07:00.343345: W tensorflow/core/grappler/utils/graph_view.cc:830] No registered 'MultiDeviceIteratorGetNextFromShard' OpKernel for GPU devices compatible with node {{node MultiDeviceIteratorGetNextFromShard}}
+	.  Registered:  device='CPU'
+
+WARNING:tensorflow:Your dataset ran out of data; interrupting training. Make sure that your dataset can generate at least `steps * epochs` batches (in this case, 1562 batches). You may need to use the repeat() function when building your dataset.
+W0909 00:19:33.744297 140354273740608 training_arrays.py:314] Your dataset ran out of data; interrupting training. Make sure that your dataset can generate at least `steps * epochs` batches (in this case, 1562 batches). You may need to use the repeat() function when building your dataset.
+I0909 00:19:33.746624 140354273740608 resnet_imagenet_main_dist_ps_4.py:294] Run stats:
+{'accuracy_top_1': 0.00713453721255064, 'eval_loss': 11.856005817613589, 'loss': 12.141108277050375, 'training_accuracy_top_1': 0.0043192156590521336, 'step_timestamp_log': ['BatchTimestamp<batch_index: 1, timestamp: 1567955480.019259>', 'BatchTimestamp<batch_index: 100, timestamp: 1567955575.3187687>', 'BatchTimestamp<batch_index: 200, timestamp: 1567955672.650456>', 'BatchTimestamp<batch_index: 300, timestamp: 1567955768.2261233>', 'BatchTimestamp<batch_index: 400, timestamp: 1567955861.762437>', 'BatchTimestamp<batch_index: 500, timestamp: 1567955957.6713781>', 'BatchTimestamp<batch_index: 600, timestamp: 1567956051.703571>', 'BatchTimestamp<batch_index: 700, timestamp: 1567956148.4690037>', 'BatchTimestamp<batch_index: 800, timestamp: 1567956241.6635606>', 'BatchTimestamp<batch_index: 900, timestamp: 1567956339.551703>', 'BatchTimestamp<batch_index: 1000, timestamp: 1567956433.126645>', 'BatchTimestamp<batch_index: 1100, timestamp: 1567956524.4361255>', 'BatchTimestamp<batch_index: 1200, timestamp: 1567956619.8893354>', 'BatchTimestamp<batch_index: 1300, timestamp: 1567956715.559857>', 'BatchTimestamp<batch_index: 1400, timestamp: 1567956809.1891534>', 'BatchTimestamp<batch_index: 1500, timestamp: 1567956902.6546178>', 'BatchTimestamp<batch_index: 1600, timestamp: 1567956996.584251>', 'BatchTimestamp<batch_index: 1700, timestamp: 1567957090.820125>', 'BatchTimestamp<batch_index: 1800, timestamp: 1567957183.8574839>', 'BatchTimestamp<batch_index: 1900, timestamp: 1567957277.4049547>', 'BatchTimestamp<batch_index: 2000, timestamp: 1567957365.0841496>', 'BatchTimestamp<batch_index: 2100, timestamp: 1567957459.1715603>', 'BatchTimestamp<batch_index: 2200, timestamp: 1567957552.577771>', 'BatchTimestamp<batch_index: 2300, timestamp: 1567957643.622784>', 'BatchTimestamp<batch_index: 2400, timestamp: 1567957738.4639554>', 'BatchTimestamp<batch_index: 2500, timestamp: 1567957828.6688385>', 'BatchTimestamp<batch_index: 2600, timestamp: 1567957920.8692584>'], 'train_finish_time': 1567958819.342227, 'avg_exp_per_second': 34.086486273021464}
+Exception ignored in: <bound method Server.__del__ of <tensorflow.python.training.server_lib.Server object at 0x7fa55c2702b0>>
+Traceback (most recent call last):
+  File "/root/anaconda3/lib/python3.6/site-packages/tensorflow_core/python/training/server_lib.py", line 158, in __del__
+AttributeError: 'NoneType' object has no attribute 'UnimplementedError'

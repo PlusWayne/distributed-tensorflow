@@ -1,0 +1,60 @@
+1. 把格式为tfrecord的数据集和models文件拷贝进docker
+
+2. 确认cuda版本为10.0
+   cudnn
+   tar zxf cudnn-10.0-linux-x64-v7.4.2.24.tgz
+   cp cuda/include/cudnn.h /usr/local/cuda/include/
+   cp cuda/lib64/* /usr/local/cuda/lib64/
+   加入bashrc
+   export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/usr/local/cuda/bin/
+   export LD_LIBRARY_PATH=./:/usr/local/cuda/lib64: 
+
+3. export 代理
+    export http_proxy=10.223.1.32:3128
+    export https_proxy=10.223.1.32:3128
+
+4. 确保后续没有小bug，使用anaconda3环境
+
+5. 升级本地pip （anaconda3自动会将其pip和python设为默认）
+    pip install --upgrade pip -i https://mirrors.cloud.tencent.com/pypi/simple
+    确认pip版本
+
+6. uninstall原有的tensorflow-gpu，安装tf2.0rc版本
+    pip uninstall tensorflow-gpu
+    pip install -U --ignore-installed wrapt enum34 simplejson netaddr -i https://mirrors.cloud.tencent.com/pypi/simple
+    pip install tensorflow-gpu==2.0.0rc -i https://mirrors.cloud.tencent.com/pypi/simple
+
+7. 修改.bashrc 加入models路径
+    vim ~/.bashrc
+    export PYTHONPATH="$PYTHONPATH:/root/models"
+    export PYTHONPATH="$PYTHONPATH:/root/official"
+    source ~/.bashrc
+
+8. 检查或者升级gcc版本
+    gcc --version
+    yum install centos-release-scl
+    yum install devtoolset-7-gcc*
+    yum install devtoolset-7-binutils
+    vim ~/.bashrc
+    加入
+    . /opt/rh/devtoolset-7/enable
+
+9. 安装openmpi
+    wget https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.1.tar.gz
+    gunzip -c openmpi-4.0.1.tar.gz | tar xf -
+    cd openmpi-4.0.1
+    ./configure --prefix=/usr/local
+    make all install
+
+10. 安装horovod
+    pip install horovod -i https://mirrors.cloud.tencent.com/pypi/simple
+    检查horovod.tensorflow，为了确保horovod.tensorflow安装成功，建议使用
+    HOROVOD_WITH_TENSORFLOW=1 pip install --no-cache-dir horovod -i https://mirrors.cloud.tencent.com/pypi/simple
+
+11. 关闭代理，环境配置完成
+
+
+time cost for training (maybe 16 times?): 11703s
+897s
+
+单机单卡 7299s
